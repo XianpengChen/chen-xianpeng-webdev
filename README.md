@@ -1,9 +1,9 @@
 # web-dev-template
-I am an undergraduate student at Northeastern, looking for CO-OP this fall.
-this is for assignment 1: webdev.
- Root to the hosted environment on Heroku:https://chen-xianpeng-webdev.herokuapp.com/
- link to my assignment:
- link to my projects:
+1. I am an undergraduate student at Northeastern, looking for CO-OP this fall.
+2. this is for assignment 1: webdev.
+3. Root to the hosted environment on Heroku:https://chen-xianpeng-webdev.herokuapp.com/
+4. link to my assignment:
+5. link to my projects:
 
 
 

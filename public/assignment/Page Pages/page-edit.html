@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>widget-image</title>
+    <title>Edit Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row container-fluid">
         <div class="navbar-header col-sm-12">
             <div class="navbar-text pull-left">
-                <a href="widget-list.html">
+                <a href="page-list.html">
           <span class="glyphicon glyphicon-chevron-left pull-left">
           </span>
                 </a>
             </div>
-            <span class="navbar-brand">
-                Widget Edit
+
+            <span class="navbar-brand" href="page-list.html">
+                Edit Page
             </span>
             <div class="navbar-text pull-right">
-                <a href="widget-list.html">
+                <a href="page-list.html">
           <span class="glyphicon glyphicon-ok pull-right">
           </span>
                 </a>
@@ -36,27 +37,12 @@
             <input type="text" class="form-control" id="name" placeholder="Page Name">
         </div>
         <div class="form-group">
-            <label for="text">Text</label>
-            <input type="text" class="form-control" id="text">
-        </div>
-        <div class="form-group">
-            <label for="url">URL</label>
-            <input type="url" class="form-control" id="url" placeholder="url">
-        </div>
-        <div class="form-group">
-            <label for="width">Width</label>
-            <input type="text" class="form-control" id="width" placeholder="100%">
-        </div>
-        <div class="form-group">
-            <label for="upload">Upload</label>
-            <input type="file" class="form-control" id="upload" placeholder="No file chosen">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Page Title">
         </div>
     </form>
-    <a class="btn btn-block btn-primary" href="#">
-        Upload Image
-    </a>
-    <a class="btn btn-block btn-danger" href="widget-list.html">
-        Delete
+    <a class="btn btn-block btn-danger" href="page-list.html">
+    Delete
     </a>
 </div>
 
@@ -64,15 +50,13 @@
     <div class="row container-fluid">
         <div class="col-sm-12">
             <div class="navbar-text pull-right">
-                <a href="#">
+                <a href="../User%20Pages/profile.html">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
-
-
 
 
 

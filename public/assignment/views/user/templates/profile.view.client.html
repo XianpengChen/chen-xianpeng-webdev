@@ -1,0 +1,68 @@
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header col-sm-12">
+            <a class="navbar-brand" href="#">
+                profile
+            </a>
+            <p class="navbar-text pull-right">
+                <a href="profile.view.client.html" class="navbar-link">
+          <span class="glyphicon glyphicon-ok white">
+          </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container">
+        <h1>Profile</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input ng-model="model.user.username"
+                       class="form-control"
+                       id="username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       placeholder="alice@wonderland.com">
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text"
+                       ng-model="model.user.firstName"
+                       class="form-control"
+                       id="first-name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text"
+                       ng-model="model.user.lastName"
+                       class="form-control"
+                       id="last-name">
+            </div>
+        </form>
+
+        <a class="btn btn-primary btn-block" ng-click="model.toWeb(model.user.username)"
+           >Websites</a>
+        <a class="btn btn-danger  btn-block"
+           href="#!/login">Logout</a>
+    </div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-sm-12">
+            <div class="navbar-text pull-right">
+                <a href="../User%20Pages/profile.html">
+                    <span class="glyphicon glyphicon-user white"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

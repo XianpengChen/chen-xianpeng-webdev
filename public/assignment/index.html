@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WAM">
 <head>
     <meta charset="UTF-8">
     <title>Assignment Home Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/user/controllers/login.controller.client.js"></script>
+    <script src="views/user/controllers/profile.controller.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="views/user/controllers/register.controller.client.js"></script>
+    <script src="views/website/controllers/website-list.controller.client.js"></script>
+    <script src="services/website.service.client.js"></script>
 </head>
 <body>
-    <h1>Assignment Home Page</h1>
+<div ng-view></div>
 </body>
-<ul>
-    <li>
-        <a href="User%20Pages/profile.html">assignment 2</a>
-    </li>
-</ul>
+
 </html>

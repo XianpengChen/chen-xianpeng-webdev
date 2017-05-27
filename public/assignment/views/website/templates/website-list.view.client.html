@@ -1,10 +1,8 @@
-
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
-                websites
+                Website
             </a>
         </div>
     </div>
@@ -24,35 +22,42 @@
                     Updated
                 </div>
                 <div class="col-sm-1">
-                    <span class="glyphicon glyphicon-plus pull-right"></span>
+                    <a href="#!/user/{{model.userId}}/website/new" style="color: #fff;">
+                        <span class="glyphicon glyphicon-plus pull-right"></span>
+                    </a>
                 </div>
             </div>
         </li>
 
 
-        <li ng-repeat=" website in model.websites" class="list-group-item">
+        <li ng-repeat="website in model.websites" class="list-group-item">
             <div class="row">
                 <div class="col-lg-5 col-md-8 col-sm-11 col-xs-11">
-                    {{website.name}}</div>
-                <div class="col-lg-3 visible-lg">
-                    {{website.created | date}}</div>
-                <div class="col-md-3 hidden-sm hidden-xs">
-                    {{website.updated | date}}</div>
-                <div class="col-sm-1">
-                    <a href="website-edit.view.client.html">
-                        <span class="glyphicon glyphicon-cog pull-right" ></span>
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                        <span>{{website.name}}</span>
                     </a>
                 </div>
-
+                <div class="col-lg-3 visible-lg">
+                    {{website.created | date}}
+                </div>
+                <div class="col-md-3 hidden-sm  hidden-xs">
+                    {{website.updated | date}}
+                </div>
+                <div class="col-sm-1">
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+                    </a>
+                </div>
             </div>
         </li>
     </ul>
 </div>
+
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                Footer
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user white"></span>
             </a>
         </div>
     </div>

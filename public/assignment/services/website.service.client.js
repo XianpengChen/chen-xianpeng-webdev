@@ -5,6 +5,7 @@
         .factory('websiteService', websiteService);
 
     function websiteService() {
+
         var websites = [
             { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
             { "_id": "234", "name": "Tweeter",     "developerId": "456", "description": "Lorem" },
@@ -14,57 +15,54 @@
             { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
             { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
         ];
-        return  {
+
+        return {
             createWebsite: createWebsite,
-            findWebsiteByUser: findWebsiteByUser,
+            findAllWebsitesForUser: findAllWebsitesForUser,
             findWebsiteById: findWebsiteById,
             updateWebsite: updateWebsite,
-            deleteWebsite: deleteWebsite,
-            findAllWebsitesForUser: findAllWebsitesForUser
-
+            deleteWebsite: deleteWebsite
         };
 
-        function createWebsite(userId, website) {
-           website.developerId = userId;
+        function createWebsite(website) {
+            website._id = (new Date()).getTime() + "";
             website.created = new Date();
             website.updated = new Date();
-           websites.push(website);
-
+            websites.push(website);
         }
+
         function updateWebsite(websiteId, website) {
+            var web = findWebsiteById(websiteId);
+            web.name = website.name;
+            web.description = website.description;
 
 
         }
+
         function deleteWebsite(websiteId) {
             var website = websites.find(function (website) {
                 return website._id === websiteId;
-            })
+            });
             var index = websites.indexOf(website);
             websites.splice(index, 1);
-
         }
-        function findWebsiteByUser(userId) {
-
-        }
-
-
 
         function findWebsiteById(websiteId) {
-            return websites.find( function (website) {
+            return websites.find(function (website) {
                 return website._id === websiteId;
             });
-
         }
+
         function findAllWebsitesForUser(userId) {
             var resultSet = [];
             for(var w in websites) {
                 if(websites[w].developerId === userId) {
-
+                    // websites[w].created = new Date();
+                    // websites[w].updated = new Date();
                     resultSet.push(websites[w]);
                 }
             }
             return resultSet;
-
         }
     }
 })();

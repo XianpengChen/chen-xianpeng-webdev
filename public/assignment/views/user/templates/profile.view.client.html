@@ -49,20 +49,17 @@
             </div>
         </form>
 
-        <a class="btn btn-primary btn-block" ng-click="model.toWeb(model.user.username)"
+        <a class="btn btn-primary btn-block" href="#!/user/{{model.user._id}}/website"
            >Websites</a>
         <a class="btn btn-danger  btn-block"
            href="#!/login">Logout</a>
     </div>
-
 <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="row container-fluid">
-        <div class="col-sm-12">
-            <div class="navbar-text pull-right">
-                <a href="../User%20Pages/profile.html">
-                    <span class="glyphicon glyphicon-user white"></span>
-                </a>
-            </div>
+    <div class="container-fluid">
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user white"></span>
+            </a>
         </div>
     </div>
 </nav>

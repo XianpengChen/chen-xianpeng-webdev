@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>page-list</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/style.css" rel="stylesheet"/>
-</head>
-<body>
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row container-fluid">
         <div class="navbar-header col-sm-12">
@@ -21,7 +13,7 @@
                 Pages
             </span></a>
             <div class="navbar-text pull-right">
-                <a href="page-new.view.client.html">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new">
           <span class="glyphicon glyphicon-plus white pull-right">
           </span>
                 </a>
@@ -30,53 +22,81 @@
     </div>
 </nav>
 
-<div class="row container-fluid">
-    <div>
-        <ul class="list-group">
-            <li class="list-group-item">
-                Blogg Post
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog pull-right" ></span>
-                </a>
-            </li>
-            <li class="list-group-item">Blogs
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog pull-right"></span>
-                </a>
-            </li>
-            <li class="list-group-item">Home
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog pull-right"></span>
-                </a>
-            </li>
-            <li class="list-group-item">About
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog pull-right"></span>
-                </a>
-            </li>
-            <li class="list-group-item">Contact Us
-                <a href="page-edit.view.client.html">
-                    <span class="glyphicon glyphicon-cog pull-right"></span>
-                </a>
-            </li>
+<!--<div class="row container-fluid">-->
+    <!--<div>-->
+        <!--<ul class="list-group">-->
+            <!--<li class="list-group-item">-->
+                <!--Blogg Post-->
+                <!--<a href="page-edit.view.client.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right" ></span>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">Blogs-->
+                <!--<a href="page-edit.view.client.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">Home-->
+                <!--<a href="page-edit.view.client.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">About-->
+                <!--<a href="page-edit.view.client.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="list-group-item">Contact Us-->
+                <!--<a href="page-edit.view.client.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+                <!--</a>-->
+            <!--</li>-->
 
-        </ul>
-    </div>
+        <!--</ul>-->
+    <!--</div>-->
 
+<!--</div>-->
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-sm-11 col-xs-11">
+                    Page Name
+                </div>
+                <div class="col-sm-1 pull-right">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new">
+                        <span class="glyphicon glyphicon-plus pull-right white"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+
+        <li ng-repeat="page in model.pages" class="list-group-item">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-sm-11 col-xs-11">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                        {{page.name}}
+                    </a>
+                </div>
+                <div class="col-sm-1 pull-right">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="row container-fluid">
-        <div class="col-sm-12">
-            <div class="navbar-text pull-right">
-                <a href="../User%20Pages/profile.html">
-                    <span class="glyphicon glyphicon-user white"></span>
-                </a>
-            </div>
+    <div class="container-fluid">
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user white"></span>
+            </a>
         </div>
     </div>
 </nav>
-
-</body>
-</html>

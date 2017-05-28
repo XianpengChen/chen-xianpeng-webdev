@@ -28,8 +28,6 @@
             var resultSet = [];
             for(var w in pages) {
                 if(pages[w].websiteId === websiteId) {
-                    // websites[w].created = new Date();
-                    // websites[w].updated = new Date();
                     resultSet.push(pages[w]);
                 }
             }

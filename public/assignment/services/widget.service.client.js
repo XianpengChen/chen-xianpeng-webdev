@@ -1,9 +1,9 @@
 (function () {
     angular
         .module('WAM')
-        .factory('WidgetService', WidgetService);
+        .factory('widgetService', widgetService);
 
-    function WidgetService() {
+    function widgetService() {
         var widgets = [
                 { "_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
                 { "_id": "234", "widgetType": "HEADING", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
@@ -24,25 +24,48 @@
         };
 
         function createWidget(pageId, widget) {
+            widget._id = (new Date()).getTime() + "";
+            widget.pageId = pageId;
+
+            widgets.push(widget);
 
 
         }
         function updateWidget(widgetId, widget) {
+            var widg = findWidgetById(widgetId);
+            widg.size = widget.size;
+            widg.text = widget.text;
+            widg.width = widget.width;
+            widg.url = widget.url;
 
 
         }
         function deleteWidget(widgetId) {
+            var widget = widgets.find(function (widget) {
+                return widget._id = widgetId;
+            })
+            var index = widgets.indexOf(widget);
+            widgets.splice(index, 1);
+
 
 
         }
         function findWidgetByPageId(pageId) {
+            var resultSet = [];
+            for(var w in widgets) {
+                if(widgets[w].pageId == pageId) {
+                    resultSet.push(widgets[w]);
+                }
+            }
+            return resultSet;
+
 
         }
 
-
-
         function findWidgetById(widgetId) {
-
+            return widgets.find(function (widget) {
+                return widget._id === widgetId;
+            });
         }
     }
 })();

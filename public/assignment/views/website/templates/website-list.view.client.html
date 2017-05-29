@@ -1,5 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
+        <div class="navbar-text pull-left" >
+            <a href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-chevron-left white"></span>
+            </a>
+        </div>
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
                 Website
@@ -22,8 +27,8 @@
                     Updated
                 </div>
                 <div class="col-sm-1">
-                    <a href="#!/user/{{model.userId}}/website/new" style="color: #fff;">
-                        <span class="glyphicon glyphicon-plus pull-right"></span>
+                    <a href="#!/user/{{model.userId}}/website/new">
+                        <span class="glyphicon glyphicon-plus pull-right white"></span>
                     </a>
                 </div>
             </div>

@@ -33,16 +33,18 @@
              placeholder="100%">
     </div>
     <div class="form-group">
-      <label for="upload">Upload</label>
-      <input type="file"
-             class="form-control"
-             id="upload"
-             placeholder="No file chosen"/>
+    <form action="/api/upload"   method="post" enctype="multipart/form-data">
+      <input  name="myFile"    type="file" class="form-control"/>
+      <input  name="width"     value="{{model.widget.width}}" style="display: none"/>
+      <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+      <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+      <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+      <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
+      <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
+    </form>
     </div>
 
-    <a class="btn btn-block btn-primary form-group" ng-click="model.updateWidget(model.widget)">
-      Upload Image
-    </a>
+
     <a class="btn btn-block btn-danger form-group" ng-click="model.deleteWidget()">
       Delete
     </a>

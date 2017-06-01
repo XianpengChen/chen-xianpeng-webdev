@@ -11,7 +11,6 @@
         model.pageId = $routeParams.pageId;
 
 
-
         //event handler
         model.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
         model.trustThisContent = trustThisContent;
@@ -19,7 +18,10 @@
         model.getWidgetId = getWidgetId;
 
         function init() {
-            model.widgets = widgetService.findWidgetByPageId(model.pageId);
+            widgetService.findWidgetByPageId(model.pageId)
+                .then(function (widgets) {
+                    model.widgets = widgets;
+                })
         }
         init();
 

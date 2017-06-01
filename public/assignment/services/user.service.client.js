@@ -5,19 +5,13 @@
         .factory('userService', userService);
 
     function userService($http) {
-        var users = [
-            {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-            {_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
-            {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
-            {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
-        ];
+
         return  {
             createUser: createUser,
             findUserByCredentials: findUserByCredentials,
             findUserById: findUserById,
             updateUser: updateUser,
-            deleteUser: deleteUser,
-            findUserByUsername: findUserByUsername
+            deleteUser: deleteUser
         };
         
         function createUser(user) {
@@ -49,18 +43,7 @@
                 });
 
         }
-        function findUserByUsername(username) {
-            var user =  users.find(function (user) {
-                return user.username === username;
 
-            });
-            if(typeof user === 'undefined') {
-                return null;
-            }
-            else {
-                return user;
-            }
-        }
         
         function findUserByCredentials(username, password) {
             var url = "/api/assignment/user?username=" + username + "&password=" + password;

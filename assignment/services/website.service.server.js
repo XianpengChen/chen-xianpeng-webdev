@@ -4,6 +4,11 @@ var app = require('../../express');
 
 
 app.get('/api/assignment/user/:userId/website', findAllWebsitesForUser);
+app.post('/api/assignment/user/:userId/website',createWebsite);
+app.get('/api/website/:websiteId',findWebsiteById);
+app.put('/api/website/:websiteId', updateWebsite);
+app.delete('/api/website/:websiteId', deleteWebsite);
+
 
 
 
@@ -30,5 +35,48 @@ function findAllWebsitesForUser(req, res) {
         }
     }
     res.json(resultSet);
+
+}
+
+function createWebsite(req, res) {
+    var website = req.body;
+    website._id = (new Date()).getTime() + "";
+    websites.push(website);
+    res.sendStatus(200);
+
+}
+
+function findWebsiteById(req, res) {
+    var websiteId = req.params.websiteId;
+    var website = websites.find( function (website) {
+        return website._id === websiteId;
+    });
+    res.send(website);
+
+
+}
+
+function updateWebsite(req, res) {
+    var website = req.body;
+    var websiteId = req.params.websiteId;
+    var web = websites.find(function (website) {
+        return website._id = websiteId;
+    })
+    web.name = website.name;
+    web.description = website.description;
+    res.sendStatus(200);
+
+}
+
+function deleteWebsite(req, res) {
+    var websiteId = req.params.websiteId;
+
+    var website = websites.find(function (website) {
+        return website._id === websiteId;
+    });
+    var index = websites.indexOf(website);
+    websites.splice(index, 1);
+    res.sendStatus(200);
+
 
 }

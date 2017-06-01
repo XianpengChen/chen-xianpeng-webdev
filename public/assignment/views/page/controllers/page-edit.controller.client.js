@@ -15,19 +15,31 @@
 
 
         function init() {
-            model.pages = pageService.findPageByWebsiteId(model.websiteId);
-            model.page = pageService.findPageById(model.pageId);
+            pageService.findPageByWebsiteId(model.websiteId)
+                .then(function (pages) {
+                    model.pages = pages;
+                });
+            pageService.findPageById(model.pageId)
+                .then(function (page) {
+                    model.page = page;
+                })
         }
         init();
 
         function updatePage(page) {
-            pageService.updatePage( model.pageId, page);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+            pageService.updatePage( model.pageId, page)
+                .then(function () {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                })
+
 
         }
         function deletePage(pageId) {
-            pageService.deletePage(pageId);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+            pageService.deletePage(pageId)
+                .then(function () {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                })
+
 
 
         }

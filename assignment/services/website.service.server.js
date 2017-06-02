@@ -60,7 +60,7 @@ function updateWebsite(req, res) {
     var website = req.body;
     var websiteId = req.params.websiteId;
     var web = websites.find(function (website) {
-        return website._id = websiteId;
+        return website._id === websiteId;
     })
     web.name = website.name;
     web.description = website.description;

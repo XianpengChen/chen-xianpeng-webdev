@@ -11,7 +11,7 @@
             .when('/login', {
                 templateUrl: 'views/user/templates/login.view.client.html',
                 controller: 'loginController',
-                controllerAs: 'vm'
+                controllerAs: 'model'
             })
             .when('/register', {
                 templateUrl: 'views/user/templates/register.view.client.html',
@@ -72,6 +72,26 @@
             .when('/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId', {
                 templateUrl: 'views/widget/templates/widget-edit.view.client.html',
                 controller: 'widgetEditController',
+                controllerAs: 'model'
+            })
+            .when('/user/:userId/website/:websiteId/page/:pageId/widget/new/heading', {
+                templateUrl: 'views/widget/templates/widget-heading-new.view.client.html',
+                controller: 'widgetNewController',
+                controllerAs: 'model'
+            })
+            .when('/user/:userId/website/:websiteId/page/:pageId/widget/new/image', {
+                templateUrl: 'views/widget/templates/widget-image-new.view.client.html',
+                controller: 'widgetNewController',
+                controllerAs: 'model'
+            })
+            .when('/user/:userId/website/:websiteId/page/:pageId/widget/new/youtube', {
+                templateUrl: 'views/widget/templates/widget-youtube-new.view.client.html',
+                controller: 'widgetNewController',
+                controllerAs: 'model'
+            })
+            .when('/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId/search', {
+                templateUrl: 'views/widget/templates/widget-flickr-search.view.client.html',
+                controller: 'flickrController',
                 controllerAs: 'model'
             });
     }

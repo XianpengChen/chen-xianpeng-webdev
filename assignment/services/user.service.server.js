@@ -61,7 +61,7 @@ function updateUser(req, res) {
 function deleteUser(req, res) {
     userId = req.params.userId;
     var user = users.find(function (user) {
-        return user._id = userId;
+        return user._id === userId;
 
     });
     var index = users.indexOf(user);

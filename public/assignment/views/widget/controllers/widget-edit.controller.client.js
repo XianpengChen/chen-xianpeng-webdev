@@ -3,7 +3,7 @@
         .module('WAM')
         .controller('widgetEditController', widgetEditController);
 
-    function widgetEditController($location,$routeParams, widgetService) {
+    function widgetEditController($location, $routeParams, widgetService) {
 
         var model = this;
         model.userId = $routeParams['userId'];
@@ -33,7 +33,7 @@
 
 
         }
-        function deleteWidget() {
+        function deleteWidget(widget) {
             widgetService.deleteWidget(model.widgetId)
                 .then(function () {
                     $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');

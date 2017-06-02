@@ -1,10 +1,16 @@
 var app = require('../../express');
 
+var multer = require('multer'); // npm install multer --save
+
+var upload = multer({ dest: __dirname+'/../../public/assignment/uploads' });
+
 app.post('/api/page/:pageId/widget', createWidget);
 app.get('/api/page/:pageId/widget', findAllWidgetsForPage);
 app.get('/api/widget/:widgetId', findWidgetById);
 app.put('/api/widget/:widgetId', updateWidget);
 app.delete('/api/widget/:widgetId', deleteWidget);
+app.post ('/api/upload', upload.single('myFile'), uploadImage);
+app.put('api/page/:pageId/widget', modifyOrder);
 
 var widgets = [
     { "_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
@@ -54,7 +60,7 @@ function updateWidget(req, res) {
     var widgetId = req.params.widgetId;
     var widget = req.body;
     var widg = widgets.find(function (widget) {
-        return widget._id = widgetId;
+        return widget._id === widgetId;
     });
     widg.size = widget.size;
     widg.text = widget.text;
@@ -67,10 +73,49 @@ function updateWidget(req, res) {
 function deleteWidget(req, res) {
     var widgetId = req.params.widgetId;
     var widget = widgets.find(function (widget) {
-        return widget._id = widgetId;
+        return widget._id === widgetId;
     });
     var index = widgets.indexOf(widget);
     widgets.splice(index, 1);
     res.sendStatus(200);
 
+}function modifyOrder(req, res) {
+    var initial = req.query['initial'];
+    var final = req.query['final'];
+    var widget = JSON.parse(JSON.stringify(widgets[initial]));
+    widgets.splice(initial, 1);
+    widgets[final] = widget;
+    res.sendStatus(200);
+
+}
+
+
+
+
+
+function uploadImage(req, res) {
+
+    var widgetId      = req.body.widgetId;
+    var width         = req.body.width;
+    var myFile        = req.file;
+
+    var userId = req.body.userId;
+    var websiteId = req.body.websiteId;
+    var pageId = req.body.pageId;
+
+    var originalname  = myFile.originalname; // file name on user's computer
+    var filename      = myFile.filename;     // new file name in upload folder
+    var path          = myFile.path;         // full path of uploaded file
+    var destination   = myFile.destination;  // folder where file is saved to
+    var size          = myFile.size;
+    var mimetype      = myFile.mimetype;
+
+    var widget = widgets.find(function (widget) {
+        return widget._id === widgetId;
+    });
+    widget.url = '/assignment/uploads/'+filename;
+
+    var callbackUrl = "/assignment/index.html#!/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/" + widgetId;
+
+    res.redirect(callbackUrl);
 }

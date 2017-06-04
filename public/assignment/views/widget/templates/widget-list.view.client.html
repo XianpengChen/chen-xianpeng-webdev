@@ -1,49 +1,45 @@
 
-<div class="wd-widget-list">
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="row container-fluid">
-        <div class="navbar-header col-sm-12">
-        <div class="navbar-text pull-left">
-            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-          <span class="glyphicon glyphicon-chevron-left white pull-left">
-          </span>
-            </a>
+<div class="wd-widget-list" ng-app="wbdvDirectives">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="row container-fluid">
+            <div class="navbar-header col-sm-12">
+                <div class="navbar-text pull-left">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
+                        <span class="glyphicon glyphicon-chevron-left white pull-left">
+                        </span>
+                    </a>
+                </div>
+
+                <span class="navbar-brand">
+                    Widgets
+                </span>
+                <div class="navbar-text pull-right">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new">
+                        <span class="glyphicon glyphicon-plus white pull-right">
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
+    </nav>
 
-            <span class="navbar-brand">
-                Widgets
-            </span>
-        <div class="navbar-text pull-right">
-            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new">
-          <span class="glyphicon glyphicon-plus white pull-right">
-          </span>
-            </a>
+
+<div class="container-fluid">
+    <ul wd-sortable>
+        <li>
+        <div ng-repeat="widget in model.widgets"
+            class="wd-widget">
+            <div class="wd-widget-toolbar">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </div>
+            <div ng-include="model.getWidgetUrlForType(widget.widgetType)"></div>
         </div>
-        </div>
-    </div>
-</nav>
-
-
-<div class="container-fluid" ng-app="wbdvDirectives">
-    <ul order>
-
-    <li ng-repeat="widget in model.widgets"
-         class="wd-widget">
-        <div class="wd-widget-toolbar">
-            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
-        </div>
-        <div ng-include="model.getWidgetUrlForType(widget.widgetType)"></div>
-    </li>
-
+        </li>
     </ul>
 </div>
-
-
 <div ng-include="'views/common/footer.view.client.html'"></div>
-
-
 
 </div>

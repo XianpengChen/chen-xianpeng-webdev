@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="2123.5" y="20.5">Summoner</node>
+    <node x="1972.2500000000002" y="388.0">User</node>
+    <node x="0.0" y="102.5">RuneStats</node>
+    <node x="234.5" y="1328.0">RunePage</node>
+    <node x="634.5" y="0.0">Image</node>
+    <node x="610.0" y="1369.0">MasteryPages</node>
+    <node x="273.0" y="82.0">MetaData</node>
+    <node x="151.5" y="2077.0">PlayerStatsSummary</node>
+    <node x="222.0" y="1593.0">Runes</node>
+    <node x="609.0" y="408.5">Mastery</node>
+    <node x="1491.5" y="0.0">userInterface</node>
+    <node x="1156.75" y="61.5">Info</node>
+    <node x="972.5" y="858.0">ChampionMastery</node>
+    <node x="635.5" y="960.5">MasteryPage</node>
+    <node x="1035.0" y="388.0">Champion</node>
+    <node x="255.5" y="981.0">RuneSlot</node>
+    <node x="197.0" y="408.5">Rune</node>
+    <node x="0.0" y="2383.0">PlayerStatsSummaryList</node>
+    <node x="92.0" y="1771.0">AggregatedStats</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Champion" target="Image">
+      <point x="-87.25" y="-210.0" />
+      <point x="1122.25" y="363.0" />
+      <point x="900.3333333333333" y="363.0" />
+      <point x="106.33333333333326" y="169.0" />
+    </edge>
+    <edge source="MasteryPage" target="Mastery">
+      <point x="0.0" y="-107.5" />
+      <point x="0.0" y="189.5" />
+    </edge>
+    <edge source="Runes" target="RunePage">
+      <point x="0.0" y="-66.5" />
+      <point x="0.0" y="107.5" />
+    </edge>
+    <edge source="RuneSlot" target="Rune">
+      <point x="0.0" y="-87.0" />
+      <point x="0.0" y="189.5" />
+    </edge>
+    <edge source="Rune" target="MetaData">
+      <point x="0.0" y="-189.5" />
+      <point x="0.0" y="87.0" />
+    </edge>
+    <edge source="User" target="userInterface">
+      <point x="-160.33333333333348" y="-231.0" />
+      <point x="2052.4166666666665" y="363.0" />
+      <point x="1797.5" y="363.0" />
+      <point x="0.0" y="169.0" />
+    </edge>
+    <edge source="User" target="Summoner">
+      <point x="160.33333333333348" y="-231.0" />
+      <point x="2373.0833333333335" y="363.0" />
+      <point x="2391.25" y="363.0" />
+      <point x="89.25" y="148.5" />
+    </edge>
+    <edge source="PlayerStatsSummary" target="AggregatedStats">
+      <point x="0.0" y="-128.0" />
+      <point x="0.0" y="128.0" />
+    </edge>
+    <edge source="Rune" target="Image">
+      <point x="130.66666666666663" y="-189.5" />
+      <point x="523.6666666666666" y="363.0" />
+      <point x="687.6666666666666" y="363.0" />
+      <point x="-106.33333333333337" y="169.0" />
+    </edge>
+    <edge source="Rune" target="RuneStats">
+      <point x="-130.66666666666663" y="-189.5" />
+      <point x="262.33333333333337" y="363.0" />
+      <point x="126.5" y="363.0" />
+      <point x="0.0" y="66.5" />
+    </edge>
+    <edge source="MasteryPages" target="MasteryPage">
+      <point x="0.0" y="-66.5" />
+      <point x="0.0" y="107.5" />
+    </edge>
+    <edge source="PlayerStatsSummaryList" target="PlayerStatsSummary">
+      <point x="0.0" y="-66.5" />
+      <point x="0.0" y="128.0" />
+    </edge>
+    <edge source="RunePage" target="RuneSlot">
+      <point x="0.0" y="-107.5" />
+      <point x="0.0" y="87.0" />
+    </edge>
+    <edge source="Mastery" target="Image">
+      <point x="0.0" y="-189.5" />
+      <point x="0.0" y="169.0" />
+    </edge>
+    <edge source="ChampionMastery" target="Champion">
+      <point x="0.0" y="-210.0" />
+      <point x="0.0" y="210.0" />
+    </edge>
+    <edge source="Champion" target="Info">
+      <point x="87.25" y="-210.0" />
+      <point x="0.0" y="107.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.598186119873817" x="1240.7158866183258" y="1198.0000000000002" />
+  <SelectedNodes>
+    <node>Summoner</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

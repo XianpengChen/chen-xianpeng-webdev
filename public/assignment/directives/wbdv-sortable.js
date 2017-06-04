@@ -1,10 +1,10 @@
 (function () {
     angular
         .module('wbdvDirectives',[])
-        .directive('order', order);
+        .directive('wdSortable', wdSortable);
     
-    function order() {
-        function linkFunction(scope, element, attrs) {
+    function wdSortable() {
+        function linkFunction(scope, element) {
             $(element).sortable();
 
         }

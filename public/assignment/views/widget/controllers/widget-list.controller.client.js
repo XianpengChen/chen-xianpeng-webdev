@@ -17,6 +17,7 @@
         model.getWidgetUrlForType = getWidgetUrlForType;
         model.getWidgetId = getWidgetId;
 
+
         function init() {
             widgetService.findWidgetByPageId(model.pageId)
                 .then(function (widgets) {
@@ -51,6 +52,8 @@
             return 'views/widget/templates/widget-'+type.toLowerCase()+'.view.client.html';
             
         }
+
+
 
     }
 })();

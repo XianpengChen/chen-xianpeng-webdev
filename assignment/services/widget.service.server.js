@@ -10,7 +10,7 @@ app.get('/api/widget/:widgetId', findWidgetById);
 app.put('/api/widget/:widgetId', updateWidget);
 app.delete('/api/widget/:widgetId', deleteWidget);
 app.post ('/api/upload', upload.single('myFile'), uploadImage);
-app.put('api/page/:pageId/widget', modifyOrder);
+app.put('/api/page/:pageId/widget', modifyOrder);
 
 var widgets = [
     { "_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
@@ -82,9 +82,10 @@ function deleteWidget(req, res) {
 }function modifyOrder(req, res) {
     var initial = req.query['initial'];
     var final = req.query['final'];
-    var widget = JSON.parse(JSON.stringify(widgets[initial]));
-    widgets.splice(initial, 1);
-    widgets[final] = widget;
+    var b = widgets[initial];
+    widgets[initial] = widgets[final];
+    widgets[final] = b;
+
     res.sendStatus(200);
 
 }

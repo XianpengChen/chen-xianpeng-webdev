@@ -3,7 +3,7 @@
   <div class="row container-fluid">
     <div class="navbar-header col-sm-12">
       <div class="navbar-text pull-left">
-        <a href="page-list.view.client.html">
+        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
           <span class="glyphicon glyphicon-chevron-left white pull-left">
           </span>
         </a>
@@ -41,7 +41,9 @@
       </textarea>
     </div>
     <a ng-click="model.createPage(page)"
-       class="btn btn-block btn-success">create</a>
+       class="btn btn-block btn-success">Create</a>
+    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page"
+       class="btn btn-block btn-danger">Cancel</a>
   </form>
 
 </div>

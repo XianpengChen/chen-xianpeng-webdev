@@ -3,7 +3,7 @@
         .module('WAM')
         .directive('wdDraggable', wdDraggable);
     
-    function wdDraggable($http) {
+    function wdDraggable($http, $routeParams) {
 
         function linkFunction(scope, element) {
             var initialArray = [];
@@ -22,7 +22,7 @@
                     if (initialArray[i] !== afterArray[i]) {
                         var initial = i;
                         var final = afterArray.indexOf(initialArray[i]);
-                        var url = '/api/page/'+321+'/widget?initial='+initial+'&final='+final;
+                        var url = '/api/page/'+$routeParams.pageId+'/widget?initial='+initial+'&final='+final;
                         return $http.put(url)
                             .then(function (response) {
                                 return response.data;

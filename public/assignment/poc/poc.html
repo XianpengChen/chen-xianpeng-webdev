@@ -1,0 +1,53 @@
+
+<div class="container-fluid" ng-controller="pocController as model">
+    <h3>search summoner by summonerName</h3>
+    <div class="input-group">
+        <label for="search"></label>
+        <input ng-model="searchText"
+               type="text"
+               id="search"
+               class="form-control">
+        <span class="input-group-btn">
+        <a ng-click="model.searchSummoner(searchText)" class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+        </a>
+    </span>
+    </div>
+
+<div class="container-fluid">
+    <h2>{{model.name}}</h2>
+    <img ng-src="http://ddragon.leagueoflegends.com/cdn/7.5.2/img/profileicon/{{model.summoner.profileIconId}}.png">
+    <h2>{{model.summonerLevel}}</h2>
+    <h2>{{model.id}}</h2>
+    <h2>{{model.summonerID}}</h2>
+    <h2>{{model.date}}</h2>
+    <a ng-click="model.searchMatch(model.summoner.accountId)"><h2>matches detail</h2></a>
+    <div class="container-fluid">
+        <table style="width:100%">
+            <tr>
+                <th>lane</th>
+                <th>gameId</th>
+                <th>championId</th>
+                <th>server</th>
+                <th>timestamp</th>
+                <th>queue</th>
+                <th>role</th>
+                <th>season</th>
+            </tr>
+            <tr ng-repeat="match in model.matches">
+                <td>{{match.lane}}</td>
+                <td>{{match.gameId}}</td>
+                <td>{{match.champion}}</td>
+                <td>{{match.platformId}}</td>
+                <td>{{match.timestamp}}</td>
+                <td>{{match.queue}}</td>
+                <td>{{match.role}}</td>
+                <td>{{match.season}}</td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>
+</div>
+

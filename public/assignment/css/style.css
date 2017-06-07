@@ -39,4 +39,7 @@ body {
     padding: 5px;
     border-bottom-left-radius: 10px;
 }
+table, th, td {
+    border: 1px solid black;
+}
 

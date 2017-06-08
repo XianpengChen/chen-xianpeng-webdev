@@ -27,15 +27,3 @@ function sayHello() {
 
 
 
-app.get('/api/poc/summoner/byname', findSummonerByName);
-
-function findSummonerByName(req, res) {
-    var name = req.query['summonerName'];
-    var api_key = 'RGAPI-271339a7-cb43-48d7-9b89-199d99017ebe';
-    var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + name + '?api_key=' + api_key;
-
-
-
-
-
-}

@@ -15,7 +15,7 @@
         model.createYoutubeWidget = createYoutubeWidget;
 
         function createHeadingWidget(widget) {
-            widget.widgetType = "HEADING";
+            widget.type = "HEADING";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
                     $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
@@ -23,7 +23,7 @@
         }
 
         function createImageWidget(widget) {
-            widget.widgetType = "IMAGE";
+            widget.type = "IMAGE";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
                     $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
@@ -31,7 +31,7 @@
         }
 
         function createYoutubeWidget(widget) {
-            widget.widgetType = "YOUTUBE";
+            widget.type = "YOUTUBE";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
                     $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');

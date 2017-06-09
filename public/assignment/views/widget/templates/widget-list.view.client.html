@@ -27,7 +27,7 @@
 <div class="container-fluid ng-scope ui-sortable"  wd-draggable>
 
     <ul ng-repeat="widget in model.widgets"
-        class="wd-widget" id="{{widget._id}}">
+        class="wd-widget" id="{{widget.name}}">
         <li >
             <div class="wd-widget">
                 <div class="wd-widget-toolbar">
@@ -36,7 +36,7 @@
                     </a>
                     <span class="glyphicon glyphicon-align-justify"></span>
                 </div>
-                <div ng-include="model.getWidgetUrlForType(widget.widgetType)"></div>
+                <div ng-include="model.getWidgetUrlForType(widget.type)"></div>
             </div>
         </li>
     </ul>

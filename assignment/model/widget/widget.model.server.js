@@ -31,7 +31,6 @@ function updateWidget(widgetId, widget) {
         $set: {
             name: widget.name,
             text: widget.text,
-            placeholder: widget.placeholder,
             description: widget.description,
             url: widget.url,
             width: widget.width,

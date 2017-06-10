@@ -13,6 +13,8 @@
         model.createHeadingWidget = createHeadingWidget;
         model.createImageWidget = createImageWidget;
         model.createYoutubeWidget = createYoutubeWidget;
+        model.createHtmlWidget = createHtmlWidget;
+        model.createTextWidget = createTextWidget;
 
         function createHeadingWidget(widget) {
             widget.type = "HEADING";
@@ -32,6 +34,20 @@
 
         function createYoutubeWidget(widget) {
             widget.type = "YOUTUBE";
+            widgetService.createWidget(model.pageId, widget)
+                .then(function () {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                })
+        }
+        function createHtmlWidget(widget) {
+            widget.type = "HTML";
+            widgetService.createWidget(model.pageId, widget)
+                .then(function () {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                })
+        }
+        function createTextWidget(widget) {
+            widget.type = "TEXT";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
                     $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');

@@ -12,7 +12,7 @@
                 Widget Edit
             </span>
             <div class="navbar-text pull-right">
-                <a ng-click="">
+                <a ng-click="model.updateWidget(model.widget)">
           <span class="glyphicon glyphicon-ok white pull-right">
           </span>
                 </a>
@@ -31,6 +31,13 @@
     <div ng-switch-when="YOUTUBE">
         <div ng-include src="'views/widget/templates/widget-youtube-edit.view.client.html'"></div>
     </div>
+    <div ng-switch-when="HTML">
+        <div ng-include src="'views/widget/templates/widget-html-edit.view.client.html'"></div>
+    </div>
+    <div ng-switch-when="TEXT">
+        <div ng-include src="'views/widget/templates/widget-text-edit.view.client.html'"></div>
+    </div>
+
 </div>
 
 

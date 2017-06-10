@@ -30,13 +30,13 @@
         class="wd-widget" id="{{widget.name}}">
         <li >
             <div class="wd-widget">
-                <div class="wd-widget-toolbar">
+                <div class="wd-widget-toolbar" id="zindex2">
                     <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                         <span class="glyphicon glyphicon-cog"></span>
                     </a>
                     <span class="glyphicon glyphicon-align-justify"></span>
                 </div>
-                <div ng-include="model.getWidgetUrlForType(widget.type)"></div>
+                <div ng-include="model.getWidgetUrlForType(widget.type)" id="zindex1"></div>
             </div>
         </li>
     </ul>

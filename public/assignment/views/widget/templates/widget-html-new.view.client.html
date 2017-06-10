@@ -1,0 +1,65 @@
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="navbar-header col-sm-12">
+            <div class="navbar-text pull-left">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+          <span class="glyphicon glyphicon-chevron-left white pull-left">
+          </span>
+                </a>
+            </div>
+
+            <span class="navbar-brand">
+                New Html Widget
+            </span>
+            <div class="navbar-text pull-right">
+                <a ng-click="model.createHeadingWidget(model.widget)">
+          <span class="glyphicon glyphicon-ok white pull-right">
+          </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div class="container-fluid">
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text"
+               ng-model="model.widget.name"
+               class="form-control"
+               id="name"
+               placeholder="Name">
+    </div>
+<div class="form-group">
+<label for="text">Text</label>
+<div class="ta-editor" ng-model="model.widget.text"
+     id="text"
+     text-angular
+     taToolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+</div>
+</div>
+<a ng-click="model.createHtmlWidget(model.widget)" class="btn btn-block btn-primary form-group">Create</a>
+    <a class="btn btn-block btn-danger form-group"
+       href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+        Cancel
+    </a>
+</form>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user white"></span>
+            </a>
+        </div>
+    </div>
+</nav>

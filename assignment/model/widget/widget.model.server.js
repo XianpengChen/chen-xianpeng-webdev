@@ -38,7 +38,9 @@ function updateWidget(widgetId, widget) {
             rows: widget.rows,
             size: widget.size,
             class: widget.class,
-            icon: widget.icon
+            icon: widget.icon,
+            deletable: widget.deletable,
+            formatted: widget.formatted
         }
     });
 }

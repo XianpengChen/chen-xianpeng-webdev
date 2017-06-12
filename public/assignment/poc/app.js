@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('proxyApp', [])
+        .module('WAM')
         .controller('proxyController', proxyController);
 
     function proxyController($http) {

@@ -1,10 +1,9 @@
+
+
+
 var app = require('../express');
 var mongoose = require('mongoose');
 mongoose.Promise = require('q').Promise;
-
-
-
-
 
 var connectionString = 'mongodb://localhost/webdev_summer1_2017';
 

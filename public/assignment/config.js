@@ -106,7 +106,7 @@
             })
             .when('/poc', {
                 templateUrl: 'poc/poc.html',
-                controller: 'pocController',
+                controller: 'proxyController',
                 controllerAS: 'model'
             });
     }

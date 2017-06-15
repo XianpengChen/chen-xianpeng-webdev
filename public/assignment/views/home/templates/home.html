@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="#!/"><span class="white">Home</span></a></li>
+            <li ng-if="!model.currentUser._id"><a href="#!/login"><span class="white">Login</span></a></li>
+            <li ng-if="!model.currentUser._id"><a href="#!/register"><span class="white">Register</span></a></li>
+            <li ng-if="model.currentUser._id"><a href="#!/profile"><span class="white">Profile</span></a></li>
+            <li><a href="#!/poc"><span class="white">POC</span></a></li>
+            <li ng-if="model.currentUser.roles.indexOf('ADMIN') > -1"><a href="#!/admin"><span class="white">admin</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+</body>
+</html>

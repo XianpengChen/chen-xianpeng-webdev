@@ -2,24 +2,19 @@
     angular
         .module('WAM')
         .controller('profileController', profileController);
-    function profileController($location, $routeParams, userService) {
+    function profileController(currentUser, $location, $routeParams, userService) {
         var model = this;
-        var userId = $routeParams['userId'];
-
-        model.userId = $routeParams['userId'];
+        model.user = currentUser;
+        model.userId = currentUser._id;//$routeParams['userId'];
         model.updateUser = updateUser;
-        model.deleteUser = deleteUser;
+        model.unregister = unregister;
+        model.logout = logout;
 
         // model.user = userService.findUserById(userId);
-        userService
-            .findUserById(userId)
-            .then(renderUser);
+        // userService
+        //     .findUserById(userId)
+        //     .then(renderUser);
 
-        function renderUser(user) {
-            model.user = user;
-
-
-        }
         function updateUser(user) {
             userService
                 .updateUser(user._id, user)
@@ -30,13 +25,22 @@
 
 
         }
-        function deleteUser(user) {
+        function unregister() {
             userService
-                .deleteUser(user._id)
+                .unregister()
                 .then(function () {
                     $location.url('/login');
+                }, function (err) {
+                    console.log(err);
                 })
 
+        }
+        function logout() {
+            userService
+                .logout()
+                .then(function () {
+                    $location.url('/login');
+                });
         }
 
     }

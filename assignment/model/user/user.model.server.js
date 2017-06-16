@@ -10,6 +10,7 @@ userModel.deleteUser = deleteUser;
 userModel.updateUser = updateUser;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.findAllUsers = findAllUsers;
+userModel.findUserByGoogleId = findUserByGoogleId;
 module.exports = userModel;
 
 
@@ -44,4 +45,8 @@ function findUserByCredentials(username, password) {
 function findAllUsers() {
     return userModel.find();
     
+}
+
+function findUserByGoogleId(googleId) {
+    return userModel.findOne({'google.id': googleId});
 }

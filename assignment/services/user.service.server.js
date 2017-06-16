@@ -60,7 +60,7 @@ function googleStrategy(token, refreshToken, profile, done) {
 
 app.get('/auth/google/callback',
     passport.authenticate('google', {
-        successRedirect: '/assignment/index.html#!/',
+        successRedirect: '/assignment/index.html#!/profile',
         failureRedirect: '/assignment/index.html#!/login'
     }));
 

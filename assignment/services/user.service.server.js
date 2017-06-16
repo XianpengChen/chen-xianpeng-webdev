@@ -32,7 +32,6 @@ function googleStrategy(token, refreshToken, profile, done) {
                     var emailParts = email.split("@");
                     var newGoogleUser = {
                         username:  emailParts[0],
-                        password:  emailParts[0],
                         firstName: profile.name.givenName,
                         lastName:  profile.name.familyName,
                         email:     email,
@@ -61,7 +60,7 @@ function googleStrategy(token, refreshToken, profile, done) {
 
 app.get('/auth/google/callback',
     passport.authenticate('google', {
-        successRedirect: '/assignment/index.html#!/profile',
+        successRedirect: '/assignment/index.html#!/',
         failureRedirect: '/assignment/index.html#!/login'
     }));
 
@@ -80,7 +79,7 @@ app.post('/api/assignment/logout', logout);
 
 app.get('/api/assignment/allUsers', isAdmin, findAllUsers);
 
-app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 
 var users = [

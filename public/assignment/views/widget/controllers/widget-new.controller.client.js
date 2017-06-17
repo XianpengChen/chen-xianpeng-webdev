@@ -3,10 +3,10 @@
         .module('WAM')
         .controller('widgetNewController', widgetNewController);
 
-    function widgetNewController($routeParams, widgetService, $location) {
+    function widgetNewController(currentUser, $routeParams, widgetService, $location) {
 
         var model = this;
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams.websiteId;
         model.pageId = $routeParams.pageId;
 
@@ -20,7 +20,7 @@
             widget.type = "HEADING";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 })
         }
 
@@ -28,7 +28,7 @@
             widget.type = "IMAGE";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 })
         }
 
@@ -36,21 +36,21 @@
             widget.type = "YOUTUBE";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 })
         }
         function createHtmlWidget(widget) {
             widget.type = "HTML";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 })
         }
         function createTextWidget(widget) {
             widget.type = "TEXT";
             widgetService.createWidget(model.pageId, widget)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                    $location.url('/user/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
                 })
         }
 

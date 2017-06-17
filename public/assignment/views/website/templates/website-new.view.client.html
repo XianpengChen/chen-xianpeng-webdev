@@ -31,7 +31,7 @@
             <li ng-repeat="website in model.websites" class="list-group-item">
                 <div class="row">
                     <div class="col-lg-5 col-md-8 col-sm-11 col-xs-11">
-                        <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                        <a href="#!/user/website/{{website._id}}/page">
                             <span>{{website.name}}</span>
                         </a>
                     </div>
@@ -42,7 +42,7 @@
                         {{website.updated | date}}
                     </div>
                     <div class="col-sm-1">
-                        <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                        <a href="#!/user/website/{{website._id}}">
                             <span class="glyphicon glyphicon-cog pull-right"></span>
                         </a>
                     </div>
@@ -82,7 +82,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header pull-right">
-            <a class="navbar-brand" href="#!/user/{{model.userId}}">
+            <a class="navbar-brand" href="#!/profile">
                 <span class="glyphicon glyphicon-user white"></span>
             </a>
         </div>

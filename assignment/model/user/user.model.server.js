@@ -11,8 +11,14 @@ userModel.updateUser = updateUser;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.findAllUsers = findAllUsers;
 userModel.findUserByGoogleId = findUserByGoogleId;
+userModel.findUserByUsername = findUserByUsername;
 module.exports = userModel;
 
+
+function findUserByUsername(username) {
+    return userModel.findOne({username: username});
+
+}
 
 function createUser(user) {
     user.roles = ['USER'];

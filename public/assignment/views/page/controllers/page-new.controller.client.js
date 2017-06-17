@@ -2,9 +2,9 @@
     angular
         .module('WAM')
         .controller('pageNewController', pageNewController);
-    function pageNewController($routeParams, pageService, $location) {
+    function pageNewController(currentUser, $routeParams, pageService, $location) {
         var model = this;
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams.websiteId;
 
         //eventHandler
@@ -21,7 +21,7 @@
         function createPage(page) {
             pageService.createPage(model.websiteId, page)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                    $location.url('/user/website/'+model.websiteId+'/page');
                 })
 
         }

@@ -2,9 +2,9 @@
     angular
         .module('WAM')
         .controller('pageEditController', pageEditController);
-    function pageEditController($routeParams, pageService, $location) {
+    function pageEditController(currentUser, $routeParams, pageService, $location) {
         var model = this;
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams.websiteId;
         model.pageId = $routeParams.pageId;
 
@@ -29,7 +29,7 @@
         function updatePage(page) {
             pageService.updatePage( model.pageId, page)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                    $location.url('/user/website/'+model.websiteId+'/page');
                 })
 
 
@@ -37,7 +37,7 @@
         function deletePage(pageId) {
             pageService.deletePage(pageId)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                    $location.url('/user/website/'+model.websiteId+'/page');
                 })
 
 

@@ -3,12 +3,12 @@
         .module('WAM')
         .controller('websiteEditController', websiteEditController);
 
-    function websiteEditController($routeParams,
+    function websiteEditController(currentUser, $routeParams,
                                   websiteService,
                                   $location) {
 
         var model = this;
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams.websiteId;
 
         // event handlers
@@ -41,21 +41,21 @@
             websiteService
                 .createWebsite(website)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website');
+                    $location.url('/user/website/');
                 });
         }
         function updateWebsite(website) {
 
             websiteService.updateWebsite( model.websiteId, website)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website');
+                    $location.url('/user/website/');
 
                 })
         }
         function deleteWebsite(websiteId) {
             websiteService.deleteWebsite(websiteId)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website');
+                    $location.url('/user/website/');
 
                 })
 

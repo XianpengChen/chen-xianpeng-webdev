@@ -3,10 +3,10 @@
         .module('WAM')
         .controller('flickrController', flickrController);
 
-    function flickrController(flickrService, $routeParams, widgetService, $location) {
+    function flickrController(currentUser, flickrService, $routeParams, widgetService, $location) {
 
         var model = this;
-        model.userId = $routeParams['userId'];
+        model.userId = currentUser._id;
         model.websiteId = $routeParams.websiteId;
         model.pageId = $routeParams.pageId;
         model.widgetId = $routeParams.widgetId;
@@ -45,7 +45,7 @@
             widgetService
                 .updateWidget(model.widgetId, model.widget)
                 .then(function () {
-                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+ model.widgetId);
+                    $location.url('/user/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+ model.widgetId);
                 });
 
 

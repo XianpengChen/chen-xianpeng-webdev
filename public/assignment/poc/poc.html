@@ -1,12 +1,55 @@
 
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header col-sm-12">
+            <p class="navbar-text pull-right">
+                <a href="" class="navbar-link">
+                    <span class="glyphicon glyphicon-ok white">
+                    </span>
+                </a>
+            </p>
+            <p class="navbar-text pull-right">
+                <a href="#!/project/register" class="navbar-link">
+                    <span class="white">
+                        register
+                    </span>
+                </a>
+            </p>
+            <p class="navbar-text pull-right">
+                <a href="#!/project/login" class="navbar-link">
+                    <span class="white">
+                        login
+                    </span>
+                </a>
+            </p>
+            <p class="navbar-text pull-right">
+                <a href="#!/project/profile" class="navbar-link">
+                    <span class="white">
+                        profile
+                    </span>
+                </a>
+            </p>
+            <p class="navbar-text pull-right">
+                <a href="#!/project/home" class="navbar-link">
+                    <span class="white">
+                        home
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
 <div class="container-fluid" ng-controller="proxyController as model">
-    <h3>search summoner by summonerName</h3>
+
+
     <div class="input-group">
         <label for="search"></label>
         <input ng-model="searchText"
                type="text"
                id="search"
-               class="form-control">
+               class="form-control"
+        placeholder="search summoner">
         <span class="input-group-btn">
         <a ng-click="model.searchSummoner(searchText)" class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
@@ -21,9 +64,9 @@
     <h2>{{model.id}}</h2>
     <h2>{{model.summonerID}}</h2>
     <h2>{{model.date}}</h2>
-    <a ng-click="model.searchMatch(model.summoner.accountId)"><h2>matches detail</h2></a>
+    <a ng-click="model.searchMatch(model.summoner.accountId)"><span>matches detail</span></a>
     <div class="container-fluid">
-        <table style="width:100%">
+        <table ng-if="model.matches" style="width:100%">
             <tr>
                 <th>lane</th>
                 <th>gameId</th>
@@ -50,5 +93,16 @@
     </div>
 </div>
 </div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user white"></span>
+            </a>
+        </div>
+    </div>
+</nav>
 
 

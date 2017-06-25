@@ -12,9 +12,27 @@ userModel.findUserByCredentials = findUserByCredentials;
 userModel.findAllUsers = findAllUsers;
 userModel.findUserByGoogleId = findUserByGoogleId;
 userModel.findUserByUsername = findUserByUsername;
+userModel.findFriends = findFriends;
+userModel.deleteFriend = deleteFriend;
+userModel.addFriend = addFriend;
 module.exports = userModel;
 
+function addFriend(userId, friendId) {
+    var friend = {
+        id: friendId
+    };
+    return userModel.update({_id: userId}, {$push: {friends: friend}});
 
+
+}
+function deleteFriend(userId, friendId) {
+    return userModel.update({_id: userId},  {$pull: {friends: {id: friendId}}})
+}
+function findFriends(userId) {
+    return userModel.find({_id: userId}, {friends: 1});
+
+
+}
 function findUserByUsername(username) {
     return userModel.findOne({username: username});
 
@@ -22,11 +40,14 @@ function findUserByUsername(username) {
 
 function createUser(user) {
     user.roles = ['USER'];
+    if (user.username === "admin") {
+        user.roles.push('ADMIN');
+    }
     return userModel.create(user);
 }
 
 function findUserById(userId) {
-    return userModel.findById(userId);
+    return userModel.findOne({_id: userId});
 }
 
 function deleteUser(userId) {

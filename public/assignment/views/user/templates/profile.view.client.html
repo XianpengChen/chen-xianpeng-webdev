@@ -2,13 +2,30 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header col-sm-12">
-            <a class="navbar-brand" href="#">
-                profile
-            </a>
-            <p class="navbar-text pull-right">
-                <a href="" class="navbar-link">
-                    <span class="glyphicon glyphicon-ok white">
+            <p class="navbar-text pull-left">
+                <a class="navbar-link" href="#!/">
+                    <span class="glyphicon glyphicon-chevron-left white">
                     </span>
+                </a>
+            </p>
+            <p class="navbar-text pull-left">
+                <a class="navbar-link" href="#!/profile/runeCollections">
+                    <span class="white">Runes</span>
+                </a>
+            </p>
+            <p class="navbar-text pull-left">
+                <a class="navbar-link" href="#!/profile/masteryCollections">
+                    <span class="white">Masteries</span>
+                </a>
+            </p>
+            <p class="navbar-text pull-left">
+                <a class="navbar-link" href="#!/user/following">
+                    <span class="white">Followings</span>
+                </a>
+            </p>
+            <p class="navbar-text pull-left">
+                <a class="navbar-link" href="#!/profile/friends">
+                    <span class="white">Friends</span>
                 </a>
             </p>
         </div>
@@ -17,7 +34,7 @@
 
 
 <div class="container">
-    <h1>Profile</h1>
+    <h1 class="white">Profile</h1>
 
     <div ng-show="model.message" class="alert alert-info">
         {{model.message}}
@@ -25,13 +42,13 @@
 
     <form>
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username" class="white">Username</label>
             <input ng-model="model.user.username"
                    class="form-control"
                    id="username">
         </div>
         <div class="form-group">
-            <label for="email">Email address</label>
+            <label class="white" for="email">Email address</label>
             <input type="email"
                    ng-model="model.user.email"
                    class="form-control"
@@ -39,14 +56,14 @@
                    placeholder="alice@wonderland.com">
         </div>
         <div class="form-group">
-            <label for="first-name">First Name</label>
+            <label class="white" for="first-name">First Name</label>
             <input type="text"
                    ng-model="model.user.firstName"
                    class="form-control"
                    id="first-name">
         </div>
         <div class="form-group">
-            <label for="last-name">Last Name</label>
+            <label class="white" for="last-name">Last Name</label>
             <input type="text"
                    ng-model="model.user.lastName"
                    class="form-control"
@@ -54,23 +71,11 @@
         </div>
         <a ng-click="model.updateUser(model.user)" class="btn btn-success btn-block">
             Update</a>
-
-        <a class="btn btn-primary btn-block" href="#!/user/website">
-            Websites</a>
         <a ng-click="model.unregister()" class="btn btn-danger btn-block">
             Unregister</a>
         <a class="btn btn-danger  btn-block"
            ng-click="model.logout()">Logout</a>
     </form>
-
-
 </div>
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-        <div class="navbar-header pull-right">
-            <a class="navbar-brand" href="#!/user/{{model.userId}}">
-                <span class="glyphicon glyphicon-user white"></span>
-            </a>
-        </div>
-    </div>
-</nav>
+
+

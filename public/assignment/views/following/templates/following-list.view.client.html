@@ -1,0 +1,91 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header col-sm-12">
+      <p class="navbar-text pull-left">
+        <a class="navbar-link" href="#!/profile">
+          <span class="glyphicon glyphicon-chevron-left white">
+          </span>
+        </a>
+      </p>
+      <p class="navbar-text pull-left">
+        <a class="navbar-link">
+          <span class="white">your followings</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-sm-3 col-xs-3">
+                    summoner Name
+                </div>
+                <div class="col-sm-3 col-xs-3">
+                    summonerID
+                </div>
+                <div class="col-sm-3 col-xs-3">
+                    Date followed
+                </div>
+                <div class="col-sm-2 col-xs-2">
+                    Recent Matches
+                </div>
+                <div class="pull-right col-sm-1 col-xs-1">
+                    <a href="#!/">
+                        <span class="glyphicon glyphicon-plus white"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+
+        <li ng-repeat="following in model.followings" class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 col-xs-3">
+                    <span>{{following.summonerName}}</span>
+                </div>
+                <div class="col-sm-3 col-xs-2">
+                    <span>{{following.summonerID}}</span>
+                </div>
+                <div class="col-sm-3 col-xs-3">
+                    <span>{{following.dateFollowing}}</span>
+                </div>
+                <div class="col-sm-2 col-xs-2">
+                    <a ng-click="model.searchMatch(following.accountID)"><span>show details below</span></a>
+                </div>
+                <div class="pull-right col-sm-1 col-xs-1">
+                    <a ng-click="model.deleteFollowing(following)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="container-fluid">
+      <table ng-if="model.matches">
+        <tr>
+          <th>match Id</th>
+          <th>champion</th>
+          <th>server</th>
+          <th>time</th>
+          <th>queue</th>
+          <th>role</th>
+          <th>season</th>
+          <th>lane</th>
+        </tr>
+        <tr ng-repeat="match in model.matches">
+          <td>{{match.gameId}}</td>
+          <td>{{match.champion}}</td>
+          <td>{{match.platformId}}</td>
+          <td>{{model.timeConverter(match.timestamp)}}</td>
+          <td>{{match.queue}}</td>
+          <td>{{match.role}}</td>
+          <td>{{match.season}}</td>
+          <td>{{match.lane}}</td>
+        </tr>
+      </table>
+    </div>

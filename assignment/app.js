@@ -20,6 +20,8 @@ require('./services/user.service.server');
 require('./services/website.service.server');
 require('./services/page.service.server');
 require('./services/widget.service.server');
+require('./services/following.service.server');
+require('./services/POC.service.server');
 app.get('/goodbye', sayHello);
 app.get('/websites', sendWebsites);
 

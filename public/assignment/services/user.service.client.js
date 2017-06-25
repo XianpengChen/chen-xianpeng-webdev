@@ -18,9 +18,18 @@
             register: register,
             checkAdmin: checkAdmin,
             findAllUsers: findAllUsers,
-            unregister: unregister
+            unregister: unregister,
+            findUserByUsername: findUserByUsername
 
         };
+        function findUserByUsername(name) {
+            var url = 'api/findUserByName/user?username=' + name;
+            $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+
+        }
         function checkAdmin() {
             var url = "/api/assignment/checkAdmin";
             return $http.get(url)

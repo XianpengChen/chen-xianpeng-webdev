@@ -1,0 +1,58 @@
+<div>
+  <div class="input-group">
+    <label for="search"></label>
+    <input ng-model="searchText"
+           type="text"
+           id="search"
+           class="form-control"
+           placeholder="search user">
+    <span class="input-group-btn">
+      <a ng-click="model.searchUser(searchText)" class="btn btn-default" type="button">
+        <span class="glyphicon glyphicon-search"></span>
+      </a>
+    </span>
+  </div>
+  </div>
+
+<div ng-show="model.message"
+     class="alert alert-info white">
+  {{model.message}}
+    </div>
+<div class="container-fluid">
+<ul ng-if="model.username" class="list-group">
+      <li class="full-width list-group-item active">
+        <div class="row">
+          <div class="col-sm-4 col-xs-4">
+            username
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            First name
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            Last name
+          </div>
+          <div ng-if="model.userId" class="col-sm-1 col-xs-1">
+                        <span class="pull-right">add Him</span>
+                </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-4 col-xs-4">
+            {{model.username}}
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            {{model.firstname}}
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            {{model.lastname}}
+          </div>
+          <div ng-if="model.userId" class="col-sm-1 col-xs-1">
+                    <a ng-click="model.addToFriends(model.friendId)">
+                        <i class="glyphicon glyphicon-plus pull-right"></i>
+                    </a>
+                </div>
+        </div>
+      </li>
+    </ul>
+</div>

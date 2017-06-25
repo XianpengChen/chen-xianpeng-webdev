@@ -10,6 +10,7 @@ var userSchema = mongoose.Schema({
         id: String,
         token: String
     },
+    friends:[{id: String, dateAdded: {type: Date, default: Date.now}}],
     roles: [{type:String, default: 'USER', enum:['USER', 'STUDENT', 'FACULTY', 'ADMIN']}],
     websites: [{type: mongoose.Schema.Types.ObjectId, ref:"websiteModel"}],
     dateCreated: Date

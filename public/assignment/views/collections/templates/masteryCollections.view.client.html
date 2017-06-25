@@ -1,0 +1,85 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header col-sm-12">
+      <p class="navbar-text pull-left">
+        <a class="navbar-link" href="#!/profile">
+          <span class="glyphicon glyphicon-chevron-left white">
+          </span>
+        </a>
+      </p>
+      <p class="navbar-text pull-left">
+        <a class="navbar-link">
+          <span class="white">your mastery collections</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <ul class="list-group">
+    <li class="list-group-item active">
+      <div class="row">
+        <div class="col-sm-3 col-xs-3">
+          Page Name
+        </div>
+        <div class="col-sm-3 col-xs-3">
+          date added
+        </div>
+        <div class="col-sm-3 col-xs-3">
+          masteries
+        </div>
+        <div class="col-sm-2 col-xs-2">
+          page id
+        </div>
+        <div ng-if="model.userId" class="col-sm-1 col-xs-1">
+          <span>delete It</span>
+        </div>
+      </div>
+    </li>
+
+
+    <li ng-repeat="page in model.pages" class="list-group-item">
+      <div class="row">
+        <div class="col-sm-3 col-xs-3">
+            <span>{{page.pageName}}</span>
+        </div>
+        <div class="col-sm-3 col-xs-3">
+          {{page.dateFollowing}}
+        </div>
+        <div class="col-sm-3 col-xs-3" ng-click="model.showDetails(page)">
+          <a><span>show details below</span></a>
+        </div>
+        <div class="col-sm-2 col-xs-2">
+          {{page.pageID}}
+        </div>
+        <div ng-if="model.userId" class="col-sm-1 col-xs-1">
+          <a ng-click="model.deleteMasteries(page)">
+            <i class="glyphicon glyphicon-remove pull-right"></i>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="container-fluid">
+      <table ng-if="model.mass">
+        <tr>
+          <th>name</th>
+          <th>id</th>
+          <th>icon</th>
+          <th>masteryTree</th>
+          <th>description</th>
+
+        </tr>
+        <tr ng-repeat="mastery in model.mass">
+          <td>{{mastery.name}}</td>
+          <td>{{mastery.id}}</td>
+          <td><img width="25" height="25" src="{{mastery.imgUrl}}"></td>
+          <td>{{mastery.masteryTree}}</td>
+          <td>{{mastery.description}}</td>
+        </tr>
+      </table>
+    </div>
+
+

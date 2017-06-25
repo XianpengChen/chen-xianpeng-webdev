@@ -78,17 +78,25 @@ app.get('/api/assignment/checkAdmin', checkAdmin);
 app.post('/api/assignment/register', register);
 app.post('/api/assignment/logout', logout);
 
+
+app.delete("/api/user/:userId/friend/:friendId", deleteFriend);
+
 app.get('/api/assignment/allUsers', isAdmin, findAllUsers);
+
 
 app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 
-var users = [
-    {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-    {_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
-    {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
-    {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
-];
+function deleteFriend(req, res) {
+    var userId = req.params.userId;
+    var friendId = req.params.friendId;
+    userModel
+        .deleteFriend(userId, friendId)
+        .then(function (response) {
+            res.sendStatus(200);
+        })
+}
+
 function localStrategy(username, password, done) {
     userModel
         .findUserByUsername(username)
@@ -160,7 +168,7 @@ function login(req, res) {
 
 
 function findUserById(req, res) {
-    var userId = req.params['userId'];
+    var userId = req.params.userId;
     userModel
         .findUserById(userId)
         .then(function (user) {

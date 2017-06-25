@@ -6,24 +6,50 @@ input.form-control {
      color: white;
  }
 body {
-    padding-top: 36px;
-    overflow-x: hidden;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    /*background-image: url('../uploads/image3.jpg');*/
+    padding-top: 40px;
+    margin-top: 40px;
+    background-image: url('http://thepatternlibrary.com/img/b.jpg');
+    background-repeat: repeat;
 }
 
+img {
+    display: block;
+    margin: auto;
+}
+
+.panel {
+    width: 75%;
+    margin: auto;
+}
 .list-group {
-    color: dodgerblue;
+    width: 85%;
+    color: black;
+    margin: auto;
 }
+.toCenter {
+    text-align: center;
+}
+
+/*.list-group-item {*/
+    /*color: black;*/
+    /*width: 85%;*/
+    /*margin: auto;*/
+/*}*/
+
 .navbar-default {
-    background-color: dodgerblue;
+    background-color: transparent;
+    border-color: transparent;
 }
 
-.navbar-default .navbar-brand {
-    color: white;
-}
+.input-group {
+    width: 75%;
+    margin: auto;
 
+}
+.container-fluid {
+    padding: 10px;
+
+}
 .wd-widget {
     margin-bottom: 40px;
 }
@@ -40,8 +66,20 @@ body {
     padding: 5px;
     border-bottom-left-radius: 10px;
 }
-table, th, td {
-    border: 1px solid black;
+table {
+    width: 90%;
+    margin: auto;
+}
+td {
+    border-color: transparent;
+    text-align: center;
+    color: #FFFFFF;
+}
+th {
+    border-color: transparent;
+    text-align: center;
+    text-decoration-style: solid;
+    color: #FFFFFF;
 }
 .youtube-widget {
     position: relative;

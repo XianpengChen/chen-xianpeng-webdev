@@ -1,6 +1,6 @@
 
 <div class="container">
-    <h1>Register</h1>
+    <h1 class="white">Register</h1>
 
     <div ng-show="model.error" class="alert alert-danger">
         {{model.error}}
@@ -8,18 +8,18 @@
     <div ng-show="model.error" class="alert alert-inform">
         {{model.message}}
     </div>
-    <label for="username">Username</label>
+    <label class="white" for="username">Username</label>
     <input id="username" type="text"
            ng-model="username"
            class="form-control"
            placeholder="username"/>
-    <label for="password">password</label>
+    <label class="white" for="password">password</label>
     <input type="password"
            id="password"
            ng-model="password"
            class="form-control"
            placeholder="password"/>
-    <label for="comfirm">comfirm password</label>
+    <label class="white" for="comfirm">comfirm password</label>
     <input type="password"
            id="comfirm"
            ng-model="password2"

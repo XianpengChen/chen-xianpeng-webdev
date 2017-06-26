@@ -19,7 +19,7 @@
                 return;
             }
 
-            var found = null;//userService.findUserByUsername(username);
+            var found = userService.findUserByUsername(username);
 
             if (found !== null) {
                 model.error = "Username is not available";

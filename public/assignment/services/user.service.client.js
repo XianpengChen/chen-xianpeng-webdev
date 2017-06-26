@@ -23,12 +23,11 @@
 
         };
         function findUserByUsername(name) {
-            var url = 'api/findUserByName/user?username=' + name;
+            var url = '/api/lol/finduserbyname/user/' + name;
             $http.get(url)
                 .then(function (response) {
                     return response.data;
                 })
-
         }
         function checkAdmin() {
             var url = "/api/assignment/checkAdmin";
